@@ -1,0 +1,38 @@
+Feature: Solicitar Ayuda con Problemas de Cuenta
+
+ Scenario: Usuario envía una solicitud de ayuda
+    Given que estoy en la pantalla de <Solicitar Ayuda>
+    When describo el problema que tengo con mi cuenta
+    And adjunto cualquier información relevante, como capturas de pantalla
+    And selecciono <Enviar Solicitud de Ayuda>
+    Then debería recibir una confirmación de que mi solicitud de ayuda se ha enviado con éxito
+
+Feature: Agregar Tarjeta Adicional
+ 
+  Scenario: Usuario agrega una tarjeta adicional
+    Given que estoy en la pantalla de inicio de sesión de la aplicación
+    When deseo agregar una tarjeta adicional
+    Then debería poder acceder a la sección de "Gestión de Tarjetas"
+    And seleccionar la opción para <Agregar Tarjeta>
+    When proporciono los detalles de mi tarjeta adicional
+    And confirmo la adición
+    Then la tarjeta adicional debe estar conectada exitosamente.
+
+Feature: Ver Resumen de Gastos de los Últimos Días
+
+  Scenario: Usuario ve un resumen de gastos de los últimos días
+    Given que he iniciado sesión en mi cuenta de la aplicación
+    When navego a la sección de "Ultimos movimientos"
+    Then debería ver una lista de transacciones de los últimos días
+    And la lista debe incluir detalles como la fecha, la descripción, lugar y el monto de cada transacción
+
+Feature: Eliminar una Tarjeta para Colocar Otra
+
+  Scenario: Usuario elimina una tarjeta existente y coloca otra
+    Given que he iniciado sesión en mi cuenta de la aplicación
+    And tengo una tarjeta existente que deseo eliminar
+    When navego a la sección de "Gestión de Tarjetas"
+    And selecciono la opción para "Eliminar Tarjeta"
+    Then debería poder seleccionar la tarjeta que deseo eliminar
+    And confirmar la eliminación
+    And debería recibir una confirmación de que la tarjeta ha sido eliminada exitosamente
